@@ -34,10 +34,11 @@ Removing global state, and adding pause and resume functionality.
 var AWS      = require('aws-sdk'),
     zlib     = require('zlib'),
     fs       = require('fs');
-    s3Stream = require('s3-upload-stream')(new AWS.S3()),
 
 // Set the client to be used for the upload.
 AWS.config.loadFromPath('./config.json');
+
+var s3Stream = require('s3-upload-stream')(new AWS.S3());
 
 // Create the streams
 var read = fs.createReadStream('/path/to/a/file');
